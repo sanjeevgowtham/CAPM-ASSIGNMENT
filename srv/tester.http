@@ -11,7 +11,7 @@ http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
 http://localhost:4004/odata/v4/EmployeeService/EmployeeSet?$filter=startswith(nameFirst,'S')
  
 ###Get the top 2 employees, use orderby salaryAmount.
-http://localhost:4004/odata/v4/EmployeeService/EmployeeSet?$top=2&$orderby=salaryAmount desc
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet?$top=2&$orderby=salaryAmount,desc
  
 ###Create new employee - POST
 POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
