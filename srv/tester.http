@@ -1,0 +1,104 @@
+### Get the Service document 
+http://localhost:4004/odata/v4/EmployeeService
+ 
+### MetaData
+http://localhost:4004/odata/v4/EmployeeService/$metadata
+ 
+### Get all Employess
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+ 
+### Get all Employess whose name starting with "S"
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet?$filter=startswith(nameFirst,'S')
+ 
+###Get the top 2 employees, use orderby salaryAmount.
+http://localhost:4004/odata/v4/EmployeeService/EmployeeSet?$top=2&$orderby=salaryAmount desc
+ 
+###Create new employee - POST
+POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+Content-Type: application/json
+ 
+{
+  "nameFirst": "sanju",
+  "nameMiddle": "M",
+  "nameLast": "samson",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": "+918810504555",
+  "email": "chris.ronaldo@gmail.com",
+  "loginName": "CHRISRL",
+  "Currency_code": "USD",
+  "salaryAmount": 6395,
+  "accountNumber": "32109876",
+  "bankId": "66665555",
+  "bankName": "My Bank of London"
+}
+ 
+###Create new employee - POST-2
+POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+Content-Type: application/json
+ 
+{
+  "nameFirst": "scott",
+  "nameMiddle": "M",
+  "nameLast": "andy",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": "+91881004555",
+  "email": "scott.andy@gmail.com",
+  "loginName": "scottandy",
+  "Currency_code": "USD",
+  "salaryAmount": 63950,
+  "accountNumber": "32109800",
+  "bankId": "66665533",
+  "bankName": "My Bank of London"
+}
+ 
+###Create new employee - POST-3
+POST http://localhost:4004/odata/v4/EmployeeService/EmployeeSet
+Content-Type: application/json
+ 
+{
+  "nameFirst": "mahi",
+  "nameMiddle": "M",
+  "nameLast": "dhoni",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": "+918810504111",
+  "email": "mahi.dhoni@gmail.com",
+  "loginName": "RATLRL",
+  "Currency_code": "EUR",
+  "salaryAmount": 6395,
+  "accountNumber": "32109879",
+  "bankId": "66665556",
+  "bankName": "My Bank of London"
+}
+ 
+###Update employee data - PATCH
+PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+ 
+{
+    "nameFirst": "Sanjeev",
+    "loginName": "Karanam",
+    "salaryAmount":1000,
+    "Currency_code": "EUR"
+}
+ 
+###Update employee data - PATCH-2
+PATCH http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+ 
+{  
+    "loginName": "Karanam",
+    "salaryAmount":1000,
+    "Currency_code": "EUR"
+}
+ 
+###DElete employee data - DELETE
+DELETE http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197C7FB
+ 
+###DElete employee data - DELETE-2
+DELETE http://localhost:4004/odata/v4/EmployeeService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
